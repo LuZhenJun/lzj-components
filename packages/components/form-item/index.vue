@@ -1,12 +1,13 @@
 <template>
     <div class="flex-wrap">
         <el-form-item
-                v-for="(item, index) in config"
-                :key="`form-item-${index}`"
-                :prop="item.prop || ''"
-                :label="item.label || ''"
-                :label-width="setWidth(item, index)"
-                :class="(item.proportion && `col-${item.proportion * colVal}`) || `col-${colVal}`">
+            v-for="(item, index) in config"
+            :key="`form-item-${index}`"
+            :prop="item.prop || ''"
+            :label="item.label || ''"
+            :label-width="setWidth(item, index)"
+            :class="(item.proportion && `col-${item.proportion * colVal}`) || `col-${colVal}`"
+        >
             <component
                 v-if="!item.hasSlot && item.itemType !== 'text'"
                 :is="`item-${item.itemType}`"
@@ -66,7 +67,7 @@ export default {
     },
     computed: {
         colVal() {
-            return 24 / this.column
+            return 24 / this.column;
         },
         columnLabelWidth() {
             // rowList每一行的数据，初始化的时候给一个二维数组，并制定第一个参数为new Array（）

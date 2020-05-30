@@ -5,17 +5,15 @@
 </template>
 
 <script>
-    export default {
-        inheritAttrs: false,
-        props: {
-            form: {
-                type: Object,
-                default: () => {}
-            }
+export default {
+    inheritAttrs: false,
+    props: {
+        form: {
+            type: Object,
+            default: () => {}
         }
     }
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
