@@ -1,0 +1,21 @@
+// 自定义dialog高度
+.calcDialog {
+  .el-dialog {
+    position: relative;
+    height: calc(100% - 150px);
+    .el-dialog__body {
+      height: calc(100% - 130px);
+      overflow: auto;
+    }
+    .el-dialog__footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 24px;
+      background: #fff;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 8px 0px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+/* flex布局样式 */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-nowrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+}
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+.flex-ju-center {
+    display: flex;
+    justify-content: center;
+}
+.flex-ju-between {
+    display: flex;
+    justify-content: space-between;
+}
+.flex-ju-around {
+    display: flex;
+    justify-content: space-around;
+}
+.flex-al-end {
+    display: flex;
+    align-items: end;
+}
+.flex-al-center {
+    display: flex;
+    align-items: center;
+}
+.flex-ju-al-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-1,
+.flex-auto {
+    display: flex;
+    flex: 1;
+}

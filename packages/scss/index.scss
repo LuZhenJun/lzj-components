@@ -1,0 +1,6 @@
+@import "common/reset"; // 浏览器默认样式重置
+@import "config"; // 基础配置
+@import "common/index"; // 各类公共样式
+@import "common/flex"; // flex样式
+@import "./common/element-variables"; // elementUI主题配置
+@import "./common/components"; // 组件样式

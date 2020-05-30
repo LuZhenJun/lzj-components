@@ -1,0 +1,67 @@
+@import "../config";
+
+/*
+ * 背景颜色
+ */
+$bgList: (
+    default: $--bg-color-default,
+    primary: $--bg-color-primary,
+    white: $--bg-color-white,
+    black: $--bg-color-black,
+    success: $--bg-color-success,
+    warning: $--bg-color-warning,
+    danger: $--bg-color-danger,
+    lighter: $--bg-color-lighter,
+    medium: $--bg-color-medium,
+    light: $--bg-color-light,
+    dark: $--bg-color-dark,
+    lzj: $--color-text-danger
+);
+
+/*
+ * 文本颜色
+ */
+$textColorList: (
+    default: $--color-text-default,
+    primary: $--color-text-primary,
+    blue: $--color-text-blue,
+    white: $--color-text-white,
+    success: $--color-text-success,
+    warning: $--color-text-warning,
+    danger: $--color-text-danger,
+    lzj: $--color-text-danger
+);
+
+/*
+ * border
+ */
+$borderDirections: (light, left, right, bottom, top, lzj);
+
+/*
+ * display布局
+ */
+$displayList: (none, table, table-cell, block, inline, inline-block, inherit, flex, lzj);
+
+/*
+ * float布局
+ */
+$floatList: (none, left, right, lzj);
+
+/*
+ * position定位
+ */
+$positionList: (relative, fixed, absolute, lzj);
+
+/*
+ * 鼠标指针
+ */
+$cursorList: (pointer, move, wait, not-allowed, lzj);
+
+
+
+/*
+ * 文字字重
+ */
+$textWeightList: ( lighter, bold, normal, lzj);
+
+

@@ -1,0 +1,91 @@
+/*
+ * 主题色
+ */
+$--color-default: #ffffff; // 主题默认色
+$--color-primary: #0065ff; // 主题色
+$--color-success: #3fc173; // 主题成功色
+$--color-info: #909399; // 主题信息色
+$--color-warning: #faad14; // 主题警告色
+$--color-danger: #f5222d; // 主题错误色
+
+/*
+ * 文本颜色
+ */
+$--color-text-default: #212434; // 默认文本颜色
+$--color-text-blue: #0065ff; // 默认主题文本颜色
+$--color-text-white: #ffffff; // 白色
+$--color-text-success: $--color-success; // 成功色
+$--color-text-warning: $--color-warning; // 警告色
+$--color-text-danger: $--color-danger; // 危险提示色
+$--color-text-primary: #303133; // 默认主题文本颜色
+$--color-text-regular: #606266;
+$--color-text-secondary: #909399;
+$--color-text-placeholder: #c0c4cc; // 输入框内提示文本颜色
+
+/*
+ * 背景颜色
+ */
+$--bg-color-default: #ffffff; // 默认主题背景颜色
+$--bg-color-primary: #0065ff; // 默认主题背景颜色
+$--bg-color-white: #ffffff; // 白色背景
+$--bg-color-black: #212434; // 黑色背景
+$--bg-color-success: $--color-success; // 白色背景
+$--bg-color-warning: $--color-warning; // 警告提示背景
+$--bg-color-danger: $--color-danger; // 危险提示背景
+$--bg-color-lighter: #f8f9fb; // 浅灰背景
+$--bg-color-medium: #e1e4e8; // 中灰背景
+$--bg-color-light: #c9ced6; // 深灰背景
+$--bg-color-dark: #0a1f44; // 暗色背景
+
+/*
+ * 边框颜色不同亮度
+ */
+$--border-color-base: #dcdfe6;
+$--border-color-light: #e4e7ed;
+$--border-color-lighter: #ebeef5;
+$--border-color-extra-light: #f2f6fc;
+$--border-color-default: #f1f2f4; // 边框色调
+$--background-color-base: #f5f7fa; // 背景基础颜色值
+
+/*
+ * 边距基数
+ */
+$sideBasic: 4; // padding、margin边距的基数值
+$spaceMax: 20; // 边距基数的最大倍数
+
+/*
+ * 24珊格col布局
+ */
+$colMax: 25;
+
+/*
+ * 单独设置fontSize和lingHeight最大值 10 + 2 * $fontLineHeightMax
+ */
+$fontLineHeightMax: 20;
+
+/*
+ * 字体行高基准
+ */
+$textList: (
+    ( size: 12, line: 20 ),
+    ( size: 14, line: 20 ),
+    ( size: 16, line: 22 ),
+    ( size: 18, line: 24 ),
+    ( size: 20, line: 26 )
+);
+
+/*
+ * 边框圆角基数值
+ */
+$--border-radius-base: 4px;
+
+/*
+ * 字体行高基准
+ */
+$textList: (
+        ( size: 12, line: 20 ),
+        ( size: 14, line: 20 ),
+        ( size: 16, line: 22 ),
+        ( size: 18, line: 24 ),
+        ( size: 20, line: 26 )
+);

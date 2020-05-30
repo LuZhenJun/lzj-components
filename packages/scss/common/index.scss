@@ -1,0 +1,297 @@
+@import 'common';
+
+/*
+* TODO: 背景样式******Start******
+* class样式生成示例
+* bg-default、...、bg-dark
+*/
+$bgListKeys: map-keys($bgList);
+@for $i from 1 to length($bgListKeys) {
+    $item: nth($bgListKeys, $i);
+    .bg-#{$item} {
+        background-color: #{map-get($bgList, $item)};
+    }
+}
+
+/* TODO: 背景样式******End****** */
+
+/*
+* TODO: 字体颜色******Start******
+* class样式生成示例
+* color-default、...、color-dark
+*/
+$textColorListKeys: map-keys($textColorList);
+@for $i from 1 to length($textColorListKeys) {
+    $item: nth($textColorListKeys, $i);
+    .color-#{$item} {
+        color: #{map-get($textColorList, $item)};
+    }
+}
+
+/* TODO: 字体颜色******End****** */
+
+/*
+* TODO: 边框、圆角样式******Start******
+* class样式生成示例
+* border-light、border-left、...、border-bottom
+*/
+@for $i from 1 to length($borderDirections) {
+    $item: nth($borderDirections, $i);
+    .border-#{$item} {
+        @if $i == 1 {
+            border: 1px solid $--border-color-default;
+        } @else {
+            border-#{$item}: 1px solid $--border-color-default;
+        }
+    }
+    .border-#{$item}-none {
+        @if $i == 1 {
+            border: none;
+        } @else {
+            border-#{$item}: none;
+        }
+    }
+    .border-none{
+        border: none;
+    }
+}
+
+.radius-none {
+    border-radius: 0;
+}
+.radius-2 {
+    border-radius: $--border-radius-base / 2;
+}
+.radius {
+    border-radius: $--border-radius-base;
+}
+.radius-50 {
+    border-radius: 50%;
+}
+.radius-top {
+    border-top-left-radius: $--border-radius-base;
+    border-top-right-radius: $--border-radius-base;
+}
+.radius-left {
+    border-top-left-radius: $--border-radius-base;
+    border-bottom-left-radius: $--border-radius-base;
+}
+.radius-right {
+    border-top-right-radius: $--border-radius-base;
+    border-bottom-right-radius: $--border-radius-base;
+}
+.radius-bottom {
+    border-bottom-right-radius: $--border-radius-base;
+    border-bottom-left-radius: $--border-radius-base;
+}
+
+/* TODO: 边框样式******End****** */
+
+/*
+* TODO: 边距样式******Start******
+* class样式生成示例
+* .m-0, ..., mb-80
+* .p-0, ..., pb-80
+*/
+@for $i from 0 to $spaceMax {
+    .m-#{$i * $sideBasic} {
+        margin: $i * $sideBasic + px;
+    }
+    .mx-#{$i * $sideBasic} {
+        margin-left: $i * $sideBasic + px;
+        margin-right: $i * $sideBasic + px;
+    }
+    .my-#{$i * $sideBasic} {
+        margin-top: $i * $sideBasic + px;
+        margin-bottom: $i * $sideBasic + px;
+    }
+    .ml-#{$i * $sideBasic} {
+        margin-left: $i * $sideBasic + px;
+    }
+    .mt-#{$i * $sideBasic} {
+        margin-top: $i * $sideBasic + px;
+    }
+    .mr-#{$i * $sideBasic} {
+        margin-right: $i * $sideBasic + px;
+    }
+    .mb-#{$i * $sideBasic} {
+        margin-bottom: $i * $sideBasic + px;
+    }
+
+    .p-#{$i * $sideBasic} {
+        padding: $i * $sideBasic + px;
+    }
+    .px-#{$i * $sideBasic} {
+        padding-left: $i * $sideBasic + px;
+        padding-right: $i * $sideBasic + px;
+    }
+    .py-#{$i * $sideBasic} {
+        padding-top: $i * $sideBasic + px;
+        padding-bottom: $i * $sideBasic + px;
+    }
+    .pl-#{$i * $sideBasic} {
+        padding-left: $i * $sideBasic + px;
+    }
+    .pt-#{$i * $sideBasic} {
+        padding-top: $i * $sideBasic + px;
+    }
+    .pr-#{$i * $sideBasic} {
+        padding-right: $i * $sideBasic + px;
+    }
+    .pb-#{$i * $sideBasic} {
+        padding-bottom: $i * $sideBasic + px;
+    }
+}
+
+/* TODO: 边距样式******End****** */
+
+/*
+* TODO: display布局样式******Start******
+* class样式生成示例
+* d-block
+*/
+@for $i from 1 to length($displayList) {
+    $item: nth($displayList, $i);
+    .d-#{$item} {
+        display: $item;
+    }
+}
+
+/* 盒子模型布局 */
+.box-sizing {
+    box-sizing: border-box;
+}
+
+/* TODO: display布局样式******End****** */
+
+/*
+* TODO: col栅格布局样式******Start******
+* col样式生成示例
+* col-1
+*/
+@for $i from 1 to $colMax {
+    .col-#{$i} {
+        width: percentage(1/24 * $i)
+    }
+}
+
+.w-100{
+    width: 100%;
+}
+
+.h-100{
+    height: 100%;
+}
+
+/* TODO: col栅格布局样式******End****** */
+
+/*
+* TODO: float布局样式******Start******
+* class样式生成示例
+* float-left
+*/
+
+@for $i from 1 to length($floatList) {
+    $item: nth($floatList, $i);
+    .float-#{$item} {
+        float: $item;
+    }
+}
+.clear-both {
+    clear: both;
+}
+
+/* TODO: float布局样式******End****** */
+
+/*
+* TODO: position定位样式******Start******
+* class样式生成示例
+* position-relative
+*/
+
+@for $i from 1 to length($positionList) {
+    $item: nth($positionList, $i);
+    .position-#{$item} {
+        position: $item;
+    }
+}
+/* TODO: position定位样式******End****** */
+
+/*
+* TODO: 鼠标指针样式******Start******
+* class样式生成示例
+* cursor-pointer
+*/
+
+@for $i from 1 to length($cursorList) {
+    $item: nth($cursorList, $i);
+    .cursor-#{$item} {
+        cursor: $item;
+    }
+}
+/* TODO: 鼠标指针样式******End****** */
+
+/*
+* TODO: 字体字重样式******Start******
+* class样式生成示例
+* font-weight-bold
+*/
+@for $i from 1 to length($textWeightList) {
+    $item: nth($textWeightList, $i);
+    .font-weight-#{$item} {
+        font-weight: $item;
+    }
+}
+
+/* 文字居中 */
+.text-align-center {
+    text-align: center;
+}
+
+/* 文字不换行 */
+.white-space-nowrap {
+    white-space: nowrap;
+}
+
+/* 文字溢出隐藏... */
+.text-overflow-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 内容溢出滚动 */
+.overflow-auto {
+    overflow: auto;
+}
+
+/* 内容溢出隐藏 */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* 文字font-size和line-height组合样式 */
+@for $i from 1 to length($textList) {
+    $item: nth($textList, $i);
+    .text-#{map-get($item, size)} {
+        font-size: #{map-get($item, size)}px;
+        line-height: #{map-get($item, line)}px;
+    }
+}
+
+/* 文字font-size和line-height单独样式 => .font-12、...、.font-30; .line-height-12、...、.line-height-30 */
+@for $i from 1 to $fontLineHeightMax {
+    .font-#{10 + $i * 2} {
+        font-size: #{10 + $i * 2}px;
+    }
+    .line-height-#{10 + $i * 2} {
+        line-height: #{10 + $i * 2}px;
+    }
+}
+
+/* 将line-height置为默认值 1 */
+.line-height-none {
+  line-height: normal;
+}
+
+/* TODO: 文本样式******End****** */
