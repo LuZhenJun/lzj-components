@@ -8,7 +8,7 @@
 $bgListKeys: map-keys($bgList);
 @for $i from 1 to length($bgListKeys) {
     $item: nth($bgListKeys, $i);
-    .bg-#{$item} {
+    .bg-#{$item + ''} {
         background-color: #{map-get($bgList, $item)};
     }
 }
@@ -23,7 +23,7 @@ $bgListKeys: map-keys($bgList);
 $textColorListKeys: map-keys($textColorList);
 @for $i from 1 to length($textColorListKeys) {
     $item: nth($textColorListKeys, $i);
-    .color-#{$item} {
+    .color-#{$item + ''} {
         color: #{map-get($textColorList, $item)};
     }
 }
@@ -37,11 +37,11 @@ $textColorListKeys: map-keys($textColorList);
 */
 @for $i from 1 to length($borderDirections) {
     $item: nth($borderDirections, $i);
-    .border-#{$item} {
+    .border-#{$item + ''} {
         @if $i == 1 {
             border: 1px solid $--border-color-default;
         } @else {
-            border-#{$item}: 1px solid $--border-color-default;
+            border-#{$item + ''}: 1px solid $--border-color-default;
         }
     }
     .border-#{$item}-none {

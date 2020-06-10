@@ -12,7 +12,7 @@
         </div>
         <div class="px-40 py-40">
             <el-form ref="form" :model="form" :rules="rules" label-position="left" size="small">
-                <lzj-form-item :form="form" :config="formConfig" column="2">
+                <lzj-form-item :form="form" :config="formConfig" :rules="rules" useLabel labelWidth="100px" column="4">
                     <template #demo>
                         <lzj-popover
                             :value="form.demo"
@@ -93,7 +93,7 @@ export default {
                 count: [{ required: true, message: '请选择总订购数量', trigger: 'change' }],
                 radio: [{ required: true, message: '请选择品质不良率', trigger: 'change' }],
                 lessRate: [{ required: true, message: '请选择品质不满率', trigger: 'change' }],
-                num: [{ required: true, message: '请输入货号', trigger: 'blur' }],
+                num: [{ required: true, message: '请输入货号', trigger: 'change' }],
                 rate: [{ required: true, message: '请输入货号名称', trigger: 'blur' }],
                 slide: [{ required: true, message: '请输入供应商id', trigger: 'change' }],
                 switch: [{ required: true, message: '请输入供应商名称', trigger: 'change' }],

@@ -6,7 +6,8 @@
             :prop="item.prop || ''"
             :label="item.label || ''"
             :label-width="setWidth(item, index)"
-            :class="(item.proportion && `col-${item.proportion * colVal}`) || `col-${colVal}`"
+            :class="(item.span && `col-${item.span * colVal}`) || `col-${colVal}`"
+            class="pl-20"
         >
             <component
                 v-if="!item.hasSlot && item.itemType !== 'text'"
@@ -76,6 +77,7 @@ export default {
                 columnList = [];
             // count用来计算是否换行新增rowList的数组元素空数组，用来填补二维数组空位
             // index代表的是rowList的当前操作项的下标
+            console.log(rowList, this.column, 'rowList');
             let count = 0,
                 index = 0;
             this.config.forEach((e, i, arr) => {
@@ -87,6 +89,7 @@ export default {
                     count = 0;
                 }
             });
+            // console.log(rowList, 'rowList');
             // 行数据转列数据
             rowList.forEach(e => {
                 for (let i = 0; i < e.length; i++) {
@@ -96,6 +99,7 @@ export default {
                     columnList[i].push(e[i]);
                 }
             });
+            // console.log(columnList, 'columnList');
             // 取出每一列最大值nameLength
             // 取出每一列的index下标
             return columnList.map(e => {
@@ -116,9 +120,9 @@ export default {
     },
     methods: {
         setWidth(item, index) {
-            if (this.useLabel) return this.labelWidth;
+            if (!this.useLabel) return this.labelWidth;
             // 增加rules为入参，判断当前项是否有必填校验，如果有那么width加上11px；
-            let val = this.columnLabelWidth.find(e => e.indexList.includes(index));
+            let val = this.columnLabelWidth.find(e => e.indexList.includes(index)) || {};
             const rulesWidth = val.hasRules ? 11 : 0;
             return val.nameLength * 14 + rulesWidth + 16 + 'px';
         },
