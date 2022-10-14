@@ -10,11 +10,16 @@
             <div class="border-light radius-50 flex-al-center text-align-center" style="width: 100px; height: 100px;">边框样式</div>
             <div class="cursor-not-allowed font-12" style="width: 400px">1234</div>
         </div>
+<!--        <css-ni-hong-deng></css-ni-hong-deng>-->
+<!--        <gu-jia-pin></gu-jia-pin>-->
     </div>
 </template>
 
 <script>
+import cssNiHongDeng from './cssNiHongDeng';
+import guJiaPin from './guJiaPin';
 export default {
-    name: 'style-test'
+    name: 'style-test',
+    components: { cssNiHongDeng, guJiaPin }
 };
 </script>

@@ -7,10 +7,9 @@
             :label="item.label || ''"
             :label-width="setWidth(item, index)"
             :class="(item.span && `col-${item.span * colVal}`) || `col-${colVal}`"
-            class="pl-20"
         >
             <component
-                v-if="!item.hasSlot && item.itemType !== 'text'"
+                v-if="!item.slotItem && item.itemType !== 'text'"
                 :is="`item-${item.itemType}`"
                 :form="form"
                 :disabled="item.disabled || disabled"
@@ -18,7 +17,9 @@
                 :style="{ width: item.width || width }"
                 v-bind="{ ...item }"
             ></component>
-            <slot v-else-if="item.hasSlot && item.itemType !== 'text'" :name="item.prop"></slot>
+            <span v-else-if="item.slotItem && item.itemType !== 'text'" class="text-overflow-ellipsis">
+                <slot :name="item.prop"></slot>
+            </span>
             <span v-else> {{ (item.formatter && item.formatter(form)) || form[item.prop] }} </span>
         </el-form-item>
         <el-form-item v-if="$slots.default" label-width="0px" class="flex-auto">
@@ -49,6 +50,7 @@ export default {
         itemSlide,
         itemSwitch
     },
+    inheritAttrs: false,
     props: {
         form: { type: Object, default: () => {} },
         config: { type: Array, default: () => [] },
@@ -77,7 +79,6 @@ export default {
                 columnList = [];
             // count用来计算是否换行新增rowList的数组元素空数组，用来填补二维数组空位
             // index代表的是rowList的当前操作项的下标
-            console.log(rowList, this.column, 'rowList');
             let count = 0,
                 index = 0;
             this.config.forEach((e, i, arr) => {
@@ -120,7 +121,7 @@ export default {
     },
     methods: {
         setWidth(item, index) {
-            if (!this.useLabel) return this.labelWidth;
+            if (this.useLabel) return this.labelWidth;
             // 增加rules为入参，判断当前项是否有必填校验，如果有那么width加上11px；
             let val = this.columnLabelWidth.find(e => e.indexList.includes(index)) || {};
             const rulesWidth = val.hasRules ? 11 : 0;
